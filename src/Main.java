@@ -18,6 +18,9 @@ public class Main {
 
         System.out.println( num2 + '\n' + num3);
 
+        System.out.println(num1 + "" + num2 + "" + num3);
+        
+
 
 
     }
