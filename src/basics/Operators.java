@@ -1,7 +1,11 @@
+package basics;
+
 public class Operators {
     public static void main(String[] args) {
 
-        // Math operators (+ - * /)
+        // Math operators (+ - * / %)
+
+        System.out.println(100 % 4);
 
         // ASSIGNMENT OPERATORS =, +=, -=, *=, /=
         int a = 50;
@@ -66,6 +70,8 @@ public class Operators {
         boolean sale = false;
         boolean rich = true;
         System.out.println("Can we buy new shoes - " + (sale || rich));
+
+        //
 
 
 

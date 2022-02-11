@@ -1,3 +1,5 @@
+package basics;
+
 public class Casting {
     public static void main(String[] args) {
 // AUTOMATIC (WIDENING) CONVERSION
