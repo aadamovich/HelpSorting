@@ -21,7 +21,6 @@ public class Main {
         System.out.println(num1 + "" + num2 + "" + num3);
 
         final int monthCount = 12;
-
         System.out.println(monthCount);
 
 
