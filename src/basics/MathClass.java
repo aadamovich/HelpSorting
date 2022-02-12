@@ -36,5 +36,6 @@ public class MathClass {
         System.out.println((int)  (Math.random() * 10) +1);
 
 
+
     }
 }
