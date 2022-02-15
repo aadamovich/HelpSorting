@@ -22,12 +22,10 @@ public class Classwork_14_02 {
             System.out.println("I'm sorry you can't go!");
         }
 // reverse version
-        if( height <= 150 && weight >= 180.00){
+        if( height <= 150 || weight >= 180.00){
             System.out.println("I'm sorry you can't go!");
         } else {
             System.out.println("Fasten your seatbelt!");
         }
-
-
     }
 }
