@@ -20,9 +20,9 @@ public class HomeworkTwo {
         System.out.println("Please insert incomes currency: ");
         String currency = scanner.next();
         double baseIncome = 85528.00d;
-        double highIncomeTax = (((income - baseIncome) * 0.32) + 14839.02);
-        double lowIncomeTax = ((income * 0.18) - 556.02);
-        if (income < 556.02){
+        double highIncomeTax = (((income - baseIncome) * 0.32d) + 14839.02d);
+        double lowIncomeTax = ((income * 0.18d) - 556.02d);
+        if (income <= 556.02){
             System.out.println("Please check if income input was correct, to low incomes for calculations of tax");
         } else if (income > baseIncome){
             System.out.println("Your gross income is : " + income + " " +  currency);
