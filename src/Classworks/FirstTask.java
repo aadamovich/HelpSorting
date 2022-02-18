@@ -1,4 +1,4 @@
-package basics;
+package Classworks;
 
 public class FirstTask {
     public static void main(String[] args) {

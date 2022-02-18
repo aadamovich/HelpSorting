@@ -1,4 +1,4 @@
-package basics;
+package Classworks;
 
 import java.lang.module.ResolutionException;
 import java.util.Scanner;

@@ -45,6 +45,7 @@ public class HomeworkThree {
 
 
         if (numberOfInstallments >= 6 && numberOfInstallments <= 12) {
+            //if(numberOfInstallments <= 12){
             monthInterest = startIndexLoan * 0.025d;
             monthInstallments = startIndexLoan + monthInterest;
 
@@ -53,6 +54,7 @@ public class HomeworkThree {
             System.out.printf("Your loan total cost will be: %.2f \n", (monthInstallments*numberOfInstallments));
 
         } else if (numberOfInstallments >= 13 && numberOfInstallments <= 24){
+            // else if (numberOfInstalments <=24){
             monthInterest = startIndexLoan * 0.050d;
             monthInstallments = startIndexLoan + monthInterest;
 
@@ -64,12 +66,39 @@ public class HomeworkThree {
             monthInstallments = startIndexLoan + monthInterest;
 
             System.out.println("Your monthly Installment will be: " + df.format(monthInstallments));
-            System.out.println("Your monthly Installment will be: " + df.format(monthInterest ));
-            System.out.println("Your loan total cost will be: " + df.format((monthInstallments*numberOfInstallments)));
+            System.out.println("Your monthly Installment will be: " + df.format(monthInterest));
+            System.out.println("Your loan total cost will be: " + df.format((monthInstallments * numberOfInstallments)));
         }
-
-
-
 
     }
 }
+/*
+ Second solution
+
+Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter loan amount");
+        double amount = scanner.nextDouble();
+
+        System.out.println("Enter number of installments");
+        int numberOfInstallments = scanner.nextInt();
+
+        if(amount < 100.0 || amount > 10000.0){
+            amount = 5000;
+        }
+
+        if(numberOfInstallments < 6 || numberOfInstallments > 48){
+            numberOfInstallments = 36;
+        }
+
+        double loanInterest;
+
+        if(numberOfInstallments <= 12){
+            loanInterest = 1.025;
+        } else if(numberOfInstallments <= 24){
+            loanInterest = 1.05;
+        } else {
+            loanInterest = 1.1;
+        }
+
+        System.out.println("Each month you will have to pay: " +  amount * loanInterest / numberOfInstallments); */
