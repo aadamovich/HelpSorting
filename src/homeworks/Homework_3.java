@@ -3,7 +3,7 @@ package homeworks;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class HomeworkThree {
+public class Homework_3 {
     public static void main(String[] args) {
 
 /*        Write a program which, based on the variables: amount - amount (double) and number of installments - numberOfInstallments (int),

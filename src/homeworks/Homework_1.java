@@ -2,7 +2,7 @@ package homeworks;
 
 import java.util.Scanner;
 
-public class HomeworkOne {
+public class Homework_1 {
     public static void main(String[] args) {
 /*
         *//*1.Write a program that reads a temperature in degrees Fahrenheit and prints out the corresponding temperature in degrees Celsius (C = (F - 32) * 5 / 9).

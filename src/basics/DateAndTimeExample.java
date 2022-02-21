@@ -6,7 +6,7 @@ public class DateAndTimeExample {
     public static void main(String[] args) {
 
         // Local Time
-/*        LocalTime localTime = LocalTime.now().withNano(0).withSecond(0);
+        LocalTime localTime = LocalTime.now().withNano(0).withSecond(0);
         System.out.println("Now it is: " + localTime);
 
         System.out.println("Minutes: " + localTime.getMinute());
@@ -14,10 +14,10 @@ public class DateAndTimeExample {
 
         LocalTime localTime1 = LocalTime.now().withNano(0);
         localTime1 = localTime1.plusMinutes(20);
-        System.out.println(localTime1);*/
+        System.out.println(localTime1);
 
         // Local date
-/*        LocalDate localDate = LocalDate.now();
+        LocalDate localDate = LocalDate.now();
         System.out.println(localDate);
         System.out.println("Year - " + localDate.getYear());
         System.out.println("Day of the week " + localDate.getDayOfWeek());
@@ -26,7 +26,7 @@ public class DateAndTimeExample {
         LocalDate localDate1 = LocalDate.of(2019,12,11);
         System.out.println("Covid started - " + localDate1);
         LocalDate localDate2 = LocalDate.of(1986, 11,13);
-        System.out.println("My birthday - " + localDate2);*/
+        System.out.println("My birthday - " + localDate2);
 
         // Local Date Time
         LocalDateTime localDateTime = LocalDateTime.now();
@@ -34,14 +34,15 @@ public class DateAndTimeExample {
 
         LocalDateTime firstInternationCatDay = LocalDateTime.of(1997, Month.NOVEMBER, 12, 10, 45, 55,0);
         System.out.println("International Cat's day was started on: " + firstInternationCatDay);
+        System.out.println();
 
         // Duration
         System.out.println(Duration.ofHours(14).toMinutes());
         System.out.println(Duration.between(firstInternationCatDay, localDateTime).toMinutes());
+        System.out.println();
 
         // Period (can work only with localDate)
         LocalDate covidStart = LocalDate.of(2019,12,11);
-
         System.out.println(Period.between(covidStart, covidStart.plusDays(200)).getMonths());
     }
 }
