@@ -50,6 +50,7 @@ public class Homework_7_Array_sorting {
         int mid = first + (last - first) / 2;
 
         while (first <= last){
+
             if(myArray[mid] < keyValue){
                 first = mid + 1;
             } else  if (myArray[mid] == keyValue){
@@ -58,6 +59,7 @@ public class Homework_7_Array_sorting {
             } else {
                 last = mid - 1;
             }
+
             mid = (first + last)/2;
         }
         if ( first > last ){
