@@ -23,9 +23,6 @@ public class SelectionSorting {
             arr[min_idx] = arr[i];
             arr[i] = temp;
         }
-
         System.out.println(Arrays.toString(arr));
-        
-        
     }
 }

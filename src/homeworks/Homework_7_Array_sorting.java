@@ -59,7 +59,6 @@ public class Homework_7_Array_sorting {
             } else {
                 last = mid - 1;
             }
-
             mid = (first + last)/2;
         }
         if ( first > last ){

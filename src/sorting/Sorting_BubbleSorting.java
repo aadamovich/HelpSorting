@@ -16,14 +16,9 @@ public class Sorting_BubbleSorting {
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
-
-
-
                 }
             }
-
         }
         System.out.println(Arrays.toString(arr));
-
     }
 }
