@@ -78,7 +78,54 @@ public class Classwork_16_02 {
 ·        it's divisible by 4 and it's not divisible by 100.
         Example: 1600 and 1512 are leap years, but 1700 and 1514 are not.*/
 
-        Scanner scanner1 = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Input any year");
+        int year = scanner.nextInt();
+
+        determineLeapYear(year);
+
+        String result = determineLeapYearString(year);
+        System.out.println(result);
+
+    }
+
+    public static void determineLeapYear(int year){
+        if(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)){
+            System.out.printf("%d - Leap year\n", year);
+        }else{
+            System.out.printf("%d - Not a leap year\n ", year);
+        }
+    }
+
+    public static String determineLeapYearString(int year){
+        if(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)){
+            return "Leap year";
+        }else{
+            return "Not a leap year";
+        }
+    }
+
+
+/*        Scanner scanner1 = new Scanner(System.in);
+        System.out.println("Insert a year. It should be positive number");
+        int year = scanner1.nextInt();
+
+        determineLeapYear(year);
+    }
+    public static void determineLeapYear(int year){
+        if(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
+            if(year < 0){
+                System.out.println("Incorrect input, try again");
+            } else if (year % 400 == 0){
+                System.out.println("It is a leap year");
+            } else if (year % 4 == 0 && year % 100 != 0){
+                System.out.printf("%d - It is a leap year \n", year);
+            } else {
+                System.out.printf("%d - It is not a leap year\n ", year);
+            }
+    }*/
+
+ /*       Scanner scanner1 = new Scanner(System.in);
         System.out.println("Insert a year. It should be positive number");
         int year = scanner1.nextInt();
         //if(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
@@ -90,16 +137,5 @@ public class Classwork_16_02 {
             System.out.println("It is a leap year");
         } else {
             System.out.println("It is not a leap year");
-        }
-
-
-
-
-
-
-
-
-
-
-    }
+        }*/
 }
