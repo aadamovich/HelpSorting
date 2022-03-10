@@ -10,7 +10,7 @@ public class Book {
         book1.setAuthor("J.K.Rouling");
         book1.setTitle("Harry Potter");
         book1.setYear(2000);
-        book1.setNumberOfPages(10);
+        book1.setNumberOfPages(165);
 
         // Get values
         System.out.println(book1.getAuthor());
