@@ -26,6 +26,6 @@ public class AbstractClassExample {
 
         Cat cat = new Cat();
         cat.sleep();
-        cat.animalSound();  
+        cat.animalSound();
     }
 }
