@@ -2,7 +2,7 @@ package advanced1;
 
 abstract class Animal1{
 
-    // New abstarct method
+    // New abstract method
 
    public abstract void animalSound();
     public void sleep(){

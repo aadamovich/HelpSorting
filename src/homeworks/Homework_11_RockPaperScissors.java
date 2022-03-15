@@ -7,9 +7,13 @@ public class Homework_11_RockPaperScissors {
     public String rockPaperScissors() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Will you play game? y/n");
+ //Check       System.out.println("Method0");
         String continueYN = scanner.nextLine().toLowerCase().trim();
-        while (continueYN.equals("y")) {
-            System.out.println("Player one input: rock / paper /  scissors  ");
+        while (continueYN.equals("y")){
+        if (continueYN == "n"){
+            break;
+        }
+            System.out.println("Player one input: rock / paper /  scissors");
             String inputPayer1 = scanner.nextLine().toLowerCase().trim();
             Random random = new Random();
             int randomInput = random.nextInt(3);
@@ -25,10 +29,10 @@ public class Homework_11_RockPaperScissors {
             System.out.println("Player two chose " + computerMove + "!");
                /* String[] myArray = {"rock", "paper", "scissors"};
                 Random random = new Random();
-                int randomInput = random.nextInt(myArray.length);*/
-            // System.out.println("Player two input rock / paper / scissors:  ");
-            // String inputPayer2 = scanner.nextLine().toLowerCase().trim();
-            //String toCompare = inputPayer1 + inputPlayer2;
+                int randomInput = random.nextInt(myArray.length);
+             System.out.println("Player two input rock / paper / scissors:  ");
+             String inputPayer2 = scanner.nextLine().toLowerCase().trim();
+             String toCompare = inputPayer1 + inputPlayer2;*/
             String toCompare = inputPayer1 + randomInput;
 
             switch (toCompare) {
@@ -64,22 +68,28 @@ public class Homework_11_RockPaperScissors {
 
             }
             System.out.println("Will you play game? y/n");
+// Check            System.out.println("Method1");
             String continue1YN = scanner.nextLine().toLowerCase().trim();
             if (continue1YN.equals("n")) {
                 System.out.println("Thanks for playing with me, have a wonderful day!");
+// Check                System.out.println("Method2");
                 break;
             }
-        }
-        return rockPaperScissors();
+      }
+        return " ";
     }
 
 
-    public String rockPaperScissorsLizardSpock(){
+    public String rockPaperScissorsLizardSpock() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Will you play game? y/n");
+// Check        System.out.println("Lizard0");
         String continueYN = scanner.nextLine().toLowerCase().trim();
         while (continueYN.equals("y")) {
-            System.out.println("Player one input: rock / paper /  scissors / lizard / spock  ");
+            if (continueYN == "n") {
+                break;
+            }
+            System.out.println("Player one input: rock / paper /  scissors / lizard / spock");
             String inputPayer1 = scanner.nextLine().toLowerCase().trim();
             Random random = new Random();
             int randomInput = random.nextInt(5);
@@ -89,7 +99,7 @@ public class Homework_11_RockPaperScissors {
                 computerMove = "rock";
             } else if (randomInput == 1) {
                 computerMove = "paper";
-            } else if (randomInput == 2){
+            } else if (randomInput == 2) {
                 computerMove = "scissors";
             } else if (randomInput == 3) {
                 computerMove = "lizard";
@@ -99,10 +109,11 @@ public class Homework_11_RockPaperScissors {
             System.out.println("Player two chose " + computerMove + "!");
                /* String[] myArray = {"rock", "paper", "scissors"};
                 Random random = new Random();
-                int randomInput = random.nextInt(myArray.length);*/
-            // System.out.println("Player two input rock / paper / scissors:  ");
-            // String inputPayer2 = scanner.nextLine().toLowerCase().trim();
-            //String toCompare = inputPayer1 + inputPlayer2;
+                int randomInput = random.nextInt(myArray.length);
+            System.out.println("Player two input rock / paper / scissors:  ");
+            String inputPayer2 = scanner.nextLine().toLowerCase().trim();
+            String toCompare = inputPayer1 + inputPlayer2; */
+
             String toCompare = inputPayer1 + randomInput;
 
             switch (toCompare) {
@@ -183,17 +194,18 @@ public class Homework_11_RockPaperScissors {
                     break;
                 default:
                     System.out.println("Incorrect input, try again");
-
             }
+
             System.out.println("Will you play game? y/n");
+// Check            System.out.println("Lizard1");
             String continue1YN = scanner.nextLine().toLowerCase().trim();
             if (continue1YN.equals("n")) {
                 System.out.println("Thanks for playing with me, have a wonderful day!");
+// Check                System.out.println("Lizard3");
                 break;
             }
-           // return rockPaperScissorsLizardSpock();
         }
-        return rockPaperScissorsLizardSpock();
+        return " ";
     }
 
     public String gameChoose() {
