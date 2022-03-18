@@ -38,7 +38,7 @@ public class IntroClass {
         child.printChildInfo();
         child.printInfo();
         child.printValues();
-        
+
         parent.printInfo();
         parent.printValues();
 

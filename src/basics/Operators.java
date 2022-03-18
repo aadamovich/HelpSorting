@@ -71,16 +71,5 @@ public class Operators {
         boolean rich = true;
         System.out.println("Can we buy new shoes - " + (sale || rich));
 
-        //
-
-
-
-
-
-
-
-
-
-
     }
 }

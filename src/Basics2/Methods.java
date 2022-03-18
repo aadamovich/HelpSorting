@@ -3,6 +3,7 @@ package Basics2;
 public class Methods {
     public static void main(String[] args) {
 
+        int x = 15;
         printName("Monta");
        // printName(); wont work if you have argument name in brackets
         printName("Cat");

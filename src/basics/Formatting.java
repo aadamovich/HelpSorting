@@ -17,7 +17,7 @@ public class Formatting {
 
         // floating point values - %f
         // integers - %d
-        //Strings - %s
+        //Strings - %
 
         System.out.println(df.format(income));
 
