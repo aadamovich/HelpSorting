@@ -16,7 +16,6 @@ class Rectangular{
     }
 }
 
-
 class Square extends Rectangular{
 
     private float side;
