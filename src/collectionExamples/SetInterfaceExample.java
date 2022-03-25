@@ -1,4 +1,4 @@
-package Classworks;
+package collectionExamples;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -8,6 +8,10 @@ import java.util.Set;
 public class SetInterfaceExample {
     public static void main(String[] args) {
 
+        String testValue = "This is test value";
+        System.out.print(testValue.indexOf("is"));
+
+        System.out.println();
    // Hashset
 /*   Set<String> name = new HashSet<String>();
 
