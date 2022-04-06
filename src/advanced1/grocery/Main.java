@@ -43,7 +43,7 @@ public class Main {
                 break;
             case 5:
                 //searching item
-                //searchItem();
+                searchForItem();
                 break;
             case 6:
                 quit = true;
@@ -83,7 +83,15 @@ public class Main {
         groceryList.removeGroceryItem(scanner.nextLine());
     }
 
-
+    public static void searchForItem(){
+        System.out.println("Item to search for: ");
+        String searchItem = scanner.nextLine();
+        if(groceryList.onList(searchItem)){
+            System.out.println("Found " + searchItem + " in your grocery list");
+        } else {
+            System.out.println(searchItem + " is not in a shopping list");
+        }
+    }
 
 }
 

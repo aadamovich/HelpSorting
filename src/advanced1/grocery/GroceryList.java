@@ -39,6 +39,14 @@ public class GroceryList {
         System.out.println("Grocery item " + (position + 1) + " has been modified");
     }
 
+    public boolean onList(String searchItem){
+        int position = findItem(searchItem);
+        if (position >= 0){
+            return true;
+        }
+        return false;
+    }
+
 
 
 
