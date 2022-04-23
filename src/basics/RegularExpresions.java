@@ -14,13 +14,13 @@ public class RegularExpresions {
         System.out.println("Please insert something");
         String input = scanner.nextLine();
 
-       /* Pattern pattern = Pattern.compile("a+b*");
-        Matcher matcher = pattern.matcher(input);
-        System.out.println(matcher.matches());*/
-
-        Pattern pattern = Pattern.compile("p{5}[0-9]{2,4}");
+        Pattern pattern = Pattern.compile("a+b*");
         Matcher matcher = pattern.matcher(input);
         System.out.println(matcher.matches());
+
+    /*    Pattern pattern = Pattern.compile("p{5}[0-9]{2,4}");
+        Matcher matcher = pattern.matcher(input);
+        System.out.println(matcher.matches());*/
 
     }
 }

@@ -5,7 +5,7 @@ public class Methods {
 
         int x = 15;
         printName("Monta");
-       // printName(); wont work if you have argument name in brackets
+       // printName(); won't work if you have argument name in brackets
         printName("Cat");
         System.out.println( returnName("Teddy"));
 

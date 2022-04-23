@@ -47,14 +47,11 @@ public class Main {
 
                 System.out.println("Do you want to do something more? y/n");
                 again = scanner.nextLine().charAt(0);
-
             }
 
         }catch(SQLException e){
             System.out.println("Something went wrong");
         }
-
-
     }
 
     public static void readData(Connection conn)throws SQLException{

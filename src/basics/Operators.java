@@ -37,6 +37,7 @@ public class Operators {
         vari++;
         ++vari;
         vari = vari +1;
+        System.out.println(vari);
 
 // RELATIONAL OPERATORS
         //EQUALITY ==
