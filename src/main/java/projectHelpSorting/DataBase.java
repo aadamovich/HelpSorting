@@ -9,7 +9,7 @@ public class DataBase {
     static String passwordSql = "Skolasiela37";
 
 
-    public static int createUser(String username, String password, String name, String eMail, String phone, String languages, String info){
+    public static int createUser(String username, String password, String name, String eMail, String phone, String languages, String info) {
         try (Connection conn = DriverManager.getConnection(dbURL, user, passwordSql)) {
 
             String sql = "INSERT INTO Account (username, password, name, eMail, phone, languages, info) VALUES (?, ?, ?, ?, ?, ?, ?);";
@@ -40,11 +40,11 @@ public class DataBase {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return  0;
+        return 0;
     }
 
 
-    public static int checkUserName(String username){
+    public static int checkUserName(String username) {
 
         try (Connection conn = DriverManager.getConnection(dbURL, user, passwordSql)) {
             String sqlUser = "SELECT * FROM Account WHERE username ='" + username + "'";
@@ -65,7 +65,7 @@ public class DataBase {
         return 0;
     }
 
-    public static int checkLogin(String username, String password){
+    public static int checkLogin(String username, String password) {
 
         try (Connection conn = DriverManager.getConnection(dbURL, user, passwordSql)) {
             String sql = "SELECT * FROM users WHERE username ='" + username + "' and password ='" + password + "'";
@@ -85,8 +85,8 @@ public class DataBase {
         return 0;
     }
 
-    public static int donateMoney(double moneyDonation){
-        try (Connection conn = DriverManager.getConnection(dbURL, user, passwordSql)){
+    public static int donateMoney(double moneyDonation) {
+        try (Connection conn = DriverManager.getConnection(dbURL, user, passwordSql)) {
             String sql = "INSERT INTO DonateMoney (moneyDonation) VALUES (?);";
 
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
@@ -136,7 +136,7 @@ public class DataBase {
                 String goods = resultSet.getString("necessaryGoods");
                 String date = resultSet.getString("actualizationDate");
 
-                System.out.printf("Necessary goods on date: %s\n%s\n",date, goods);
+                System.out.printf("Necessary goods on date: %s\n%s\n", date, goods);
             }
 
         } catch (SQLException throwables) {
@@ -159,7 +159,7 @@ public class DataBase {
                 String workingTime = resultSet.getString("workingTime");
                 String contactInfo = resultSet.getString("contactInfo");
 
-                System.out.printf("%s\n%s\n%s\n%s\n",city, address, workingTime, contactInfo);
+                System.out.printf("%s\n%s\n%s\n%s\n", city, address, workingTime, contactInfo);
             }
 
         } catch (SQLException throwables) {
@@ -237,12 +237,12 @@ public class DataBase {
         return 0;
     }
 
-    public static int healthCareSql(String region, String healthProc, int healthProcCount, String languages,String addInfo) {
+    public static int healthCareSql(String region, String healthProc, int healthProcCount, String languages, String addInfo) {
 
         try (Connection conn = DriverManager.getConnection(dbURL, user, passwordSql)) {
             String sql = "INSERT INTO healthCareOffer (region, healthProc, healthProcCount, languages, addInfo) VALUES (?, ?, ?, ?, ?);";
 
-           PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
 
             preparedStatement.setString(1, region);
             preparedStatement.setString(2, healthProc);
@@ -299,7 +299,7 @@ public class DataBase {
         return 0;
     }
 
-    public static void readSocialSupportSql(){  //Should add option with authorization, without, select regarding to region
+    public static void readSocialSupportSql() {  //Should add option with authorization, without, select regarding to region
         String output = null;
         try (Connection conn = DriverManager.getConnection(dbURL, user, passwordSql)) {
             String sql = "SELECT * FROM socialSupportOffer";
@@ -315,7 +315,7 @@ public class DataBase {
                 String addInfo = resultSet.getString("addInfo");
                 output = "Social offers you can choose:\n\tOffer id: %d\n\tRegion: %s \n\tCommunication language: %s\n\tInformation: %s\n";
 
-                System.out.println(String.format(output,socialSupportOfferID, region, languages,addInfo));
+                System.out.println(String.format(output, socialSupportOfferID, region, languages, addInfo));
             }
 
         } catch (SQLException throwables) {
@@ -323,7 +323,7 @@ public class DataBase {
         }
     }
 
-    public static void readHelpCentersSql(){  //Should add option choose by region or print all
+    public static void readHelpCentersSql() {  //Should add option choose by region or print all
         String output = null;
         try (Connection conn = DriverManager.getConnection(dbURL, user, passwordSql)) {
             String sql = "SELECT * FROM HelpCenter";
@@ -340,7 +340,7 @@ public class DataBase {
                 String contactInfo = resultSet.getString("contactInfo");
                 output = "Help centers information:\n\tHelp Center id: %d\n\tCity: %s \n\tAddress: %s\n\tWorking time: %s\n\tContact info: %s";
 
-                System.out.println(String.format(output,helpCenterID, city, address, workingTime, contactInfo));
+                System.out.println(String.format(output, helpCenterID, city, address, workingTime, contactInfo));
             }
 
         } catch (SQLException throwables) {
@@ -348,7 +348,7 @@ public class DataBase {
         }
     }
 
-    public static void readHealthHelpSql(){  //Should add option choose by region or print all
+    public static void readHealthHelpSql() {  //Should add option choose by region or print all
         String output = null;
         try (Connection conn = DriverManager.getConnection(dbURL, user, passwordSql)) {
             String sql = "SELECT * FROM healthCareOffer";
@@ -365,7 +365,7 @@ public class DataBase {
                 String addInfo = resultSet.getString("addInfo");
                 output = "Health procedures information:\n\tProcedures id: %d\n\tCity: %s \n\tHealth procedure: %s\n\tWorking language: %s\n\tAdditional information: %s";
 
-                System.out.println(String.format(output,healthCareOfferID, region, healthProc, languages, addInfo));
+                System.out.println(String.format(output, healthCareOfferID, region, healthProc, languages, addInfo));
             }
 
         } catch (SQLException throwables) {
