@@ -9,12 +9,10 @@ import java.util.Set;
 public class SortingMethodsList {
 
     public static void donateMoney() {
-        Scanner scanner = new Scanner(System.in);
-        double moneyDonation;
-
-        System.out.println("Please follow instructions. Please insert donation amount: ");
-        moneyDonation = scanner.nextInt();
-        System.out.println("Please follow transactions instructions"); // Transaction process
+        UserInteraction ui = new UserInteraction();
+        ui.sendMessage("Please follow instructions. Please insert donation amount: ");
+        double moneyDonation = ui.readNumber();
+        ui.sendMessage("Please follow transactions instructions"); // Transaction process
 
         int donateMoneySql = DataBase.donateMoney(moneyDonation);
         if (donateMoneySql > 0) {
