@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class SortingMethodsList {
 
-    public static void donateMoney() throws Exception {
+    public static void donateMoney() {
         Scanner scanner = new Scanner(System.in);
         double moneyDonation;
 
