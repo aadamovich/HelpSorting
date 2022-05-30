@@ -8,7 +8,6 @@ import java.util.Set;
 
 public class SortingMethodsList {
 
-
     public static void donateMoney() throws Exception {
         Scanner scanner = new Scanner(System.in);
         double moneyDonation;
@@ -297,16 +296,6 @@ public class SortingMethodsList {
         return 0;
     }
 
-    private static String getRegion(Set<String> cities, String s, String s2, String s3) {
-        String region = s.toUpperCase();
-        if (cities.contains(region)) {
-            System.out.println(s2);
-        } else {
-            System.out.println(s3);
-        }
-        return region;
-    }
-
     public static void volunteeringWork() {
         Scanner scanner = new Scanner(System.in);
         String quite = "yes";
@@ -341,11 +330,6 @@ public class SortingMethodsList {
             System.out.println("Would you like to insert another volunteer work preference? yes / no");
             quite = scanner.nextLine();
         }
-    }
-
-    private static Set<String> getCities() {
-        System.out.println("Insert region where accommodation is located? Riga / Jelgava / Valmiera / Liepaja / Ventspils / Daugavpils / Rezekne");
-        return Set.of("RIGA", "JELGAVA", "VALMIERA", "LIEPAJA", "VENTSPILS", "DAUGAVPILS", "REZEKNE");
     }
 
     public static void arrivalToLatvia() {
@@ -410,4 +394,20 @@ public class SortingMethodsList {
     public static void readHealthHelp() {
         DataBase.readHealthHelpSql();
     }
+
+    private static String getRegion(Set<String> cities, String s, String s2, String s3) {
+        String region = s.toUpperCase();
+        if (cities.contains(region)) {
+            System.out.println(s2);
+        } else {
+            System.out.println(s3);
+        }
+        return region;
+    }
+
+    private static Set<String> getCities() {
+        System.out.println("Insert region where accommodation is located? Riga / Jelgava / Valmiera / Liepaja / Ventspils / Daugavpils / Rezekne");
+        return Set.of("RIGA", "JELGAVA", "VALMIERA", "LIEPAJA", "VENTSPILS", "DAUGAVPILS", "REZEKNE");
+    }
+
 }
