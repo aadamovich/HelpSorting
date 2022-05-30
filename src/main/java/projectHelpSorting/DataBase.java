@@ -85,8 +85,9 @@ public class DataBase {
         return 0;
     }
 
-    public static int donateMoney(double moneyDonation) {
+    public static boolean donateMoney(double moneyDonation) {
         try (Connection conn = DriverManager.getConnection(dbURL, user, passwordSql)) {
+
             String sql = "INSERT INTO DonateMoney (moneyDonation) VALUES (?);";
 
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
@@ -95,10 +96,12 @@ public class DataBase {
 
             preparedStatement.executeUpdate();
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return 1;
+        return false;
     }
 
     public static void readDonationAmount() {

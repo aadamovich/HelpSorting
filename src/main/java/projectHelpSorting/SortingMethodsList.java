@@ -13,13 +13,11 @@ public class SortingMethodsList {
         ui.sendMessage("Please follow instructions. Please insert donation amount: ");
         double moneyDonation = ui.readNumber();
         ui.sendMessage("Please follow transactions instructions"); // Transaction process
-
-        int donateMoneySql = DataBase.donateMoney(moneyDonation);
-        if (donateMoneySql > 0) {
-            System.out.println("Thank you for donation of " + moneyDonation + " EUR!");
+        if (DataBase.donateMoney(moneyDonation)) {
+            ui.sendMessage("Thank you for donation of " + moneyDonation + " EUR!");
             DataBase.readDonationAmount();
         } else {
-            System.out.println("Something went wrong");
+            ui.sendMessage("Something went wrong");
         }
     }
 
