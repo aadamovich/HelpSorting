@@ -1,40 +1,36 @@
 package projectHelpSorting;
 
-import basics.Switch;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.time.format.SignStyle;
-import java.util.Locale;
 import java.util.Scanner;
 import java.util.Set;
 
 public class SortingMethodsList {
 
 
-       public static void donateMoney() throws Exception {
-           Scanner scanner = new Scanner(System.in);
-           double moneyDonation;
+    public static void donateMoney() throws Exception {
+        Scanner scanner = new Scanner(System.in);
+        double moneyDonation;
 
-           System.out.println("Please follow instructions. Please insert donation amount: ");
-           moneyDonation = scanner.nextInt();
-           System.out.println("Please follow transactions instructions"); // Transaction process
+        System.out.println("Please follow instructions. Please insert donation amount: ");
+        moneyDonation = scanner.nextInt();
+        System.out.println("Please follow transactions instructions"); // Transaction process
 
-           int donateMoneySql = DataBase.donateMoney(moneyDonation);
-           if (donateMoneySql > 0) {
-               System.out.println("Thank you for donation of " + moneyDonation + " EUR!");
-               DataBase.readDonationAmount();
-           } else {
-               System.out.println("Something went wrong");
-           }
-       }
+        int donateMoneySql = DataBase.donateMoney(moneyDonation);
+        if (donateMoneySql > 0) {
+            System.out.println("Thank you for donation of " + moneyDonation + " EUR!");
+            DataBase.readDonationAmount();
+        } else {
+            System.out.println("Something went wrong");
+        }
+    }
 
-    public static void donateGoods(){
+    public static void donateGoods() {
         Scanner scanner = new Scanner(System.in);
         String contin = "yes";
 
-        while(contin.contains("yes")) {
+        while (contin.contains("yes")) {
             System.out.println("We are glad for your decision to donate goods. \n" +
                     "Press 1 to receive information about necessary goods \n " +
                     "Press 2 to receive donation point information");
@@ -53,9 +49,9 @@ public class SortingMethodsList {
             System.out.println("Would you like to continue with other goods donation information? yes / no");
             contin = scanner.next().toLowerCase();
         }
-        }
+    }
 
-    public static void transportation(){
+    public static void transportation() {
         Scanner scannerText = new Scanner(System.in);
         Scanner scannerInt = new Scanner(System.in);
         String contin = "yes";
@@ -69,83 +65,83 @@ public class SortingMethodsList {
             System.out.println("Data format error, try again");
         }
         System.out.println("Insert region from where you could start journey? Riga / Jelgava / Valmiera / Liepaja / Ventspils / Daugavpils / Rezekne");
-        Set<String> cities = Set.of("RIGA",  "JELGAVA", "VALMIERA", "LIEPAJA", "VENTSPILS", "DAUGAVPILS", "REZEKNE");
+        Set<String> cities = Set.of("RIGA", "JELGAVA", "VALMIERA", "LIEPAJA", "VENTSPILS", "DAUGAVPILS", "REZEKNE");
         String region = getRegion(cities, scannerText.nextLine(), "Region set!", "Region not correct, try again!");
 
         while (contin.equals("yes")) {
-        System.out.println("Please choose what type transportation support you can offer:\n" +
-                "1 - Donate transport\n" +
-                "2 - Offer transport for some time\n" +
-                "3 - I can drive with my car\n" +
-                "4 - I can volunteer as driver\n");
+            System.out.println("Please choose what type transportation support you can offer:\n" +
+                    "1 - Donate transport\n" +
+                    "2 - Offer transport for some time\n" +
+                    "3 - I can drive with my car\n" +
+                    "4 - I can volunteer as driver\n");
 
-        int choice = scannerInt.nextInt();
+            int choice = scannerInt.nextInt();
             String techCondition = "";
             String allWheelDrive = "";
             String stopDate = "";
             String categories = "";
             String availability = "";
-            int seats = 0; 
-        if(choice == 1){
-            System.out.println("Please insert required information: "); // Code is repeating
-            System.out.println("Is transport at good technical condition? yes / no ");
-            techCondition = scannerText.nextLine().toUpperCase();
-            System.out.println("Does car have four-wheel drive (4x4)? yes / no");
-            allWheelDrive = scannerText.nextLine().toUpperCase();
-            System.out.println("How many passenger seats transport have?");
-            seats = scannerText.nextInt();
+            int seats = 0;
+            if (choice == 1) {
+                System.out.println("Please insert required information: "); // Code is repeating
+                System.out.println("Is transport at good technical condition? yes / no ");
+                techCondition = scannerText.nextLine().toUpperCase();
+                System.out.println("Does car have four-wheel drive (4x4)? yes / no");
+                allWheelDrive = scannerText.nextLine().toUpperCase();
+                System.out.println("How many passenger seats transport have?");
+                seats = scannerText.nextInt();
 
-        } else if(choice == 2 || choice == 3){
-            System.out.println("Please insert required information: ");
-            System.out.println("Till which date you can offer transport? Insert information in this format __/__/____"); //
-            stopDate = scannerText.nextLine();
-            try {
-                parsedDate = LocalDate.from(DateTimeFormatter.ofPattern("dd/MM/yyyy").parse(stopDate));
-            } catch (DateTimeParseException ex) {
-                System.out.println("Data format error, try again");
-            }
+            } else if (choice == 2 || choice == 3) {
+                System.out.println("Please insert required information: ");
+                System.out.println("Till which date you can offer transport? Insert information in this format __/__/____"); //
+                stopDate = scannerText.nextLine();
+                try {
+                    parsedDate = LocalDate.from(DateTimeFormatter.ofPattern("dd/MM/yyyy").parse(stopDate));
+                } catch (DateTimeParseException ex) {
+                    System.out.println("Data format error, try again");
+                }
 
-            System.out.println("Is transport at good technical condition? yes / no ");
-            techCondition = scannerText.nextLine();
+                System.out.println("Is transport at good technical condition? yes / no ");
+                techCondition = scannerText.nextLine();
 
-            System.out.println("Does car have four-wheel drive (4x4)? yes / no");
-            allWheelDrive = scannerText.nextLine();
+                System.out.println("Does car have four-wheel drive (4x4)? yes / no");
+                allWheelDrive = scannerText.nextLine();
 
-            System.out.println("How many passenger seats transport have?");
-            seats = scannerInt.nextInt();
+                System.out.println("How many passenger seats transport have?");
+                seats = scannerInt.nextInt();
 
-        } else if(choice == 4) { // How I can forward data to volunteering table as well
+            } else if (choice == 4) { // How I can forward data to volunteering table as well
 
-            System.out.println("Insert valid driving licence category: ");
-            Set<String> categoriesList = Set.of("AM", "A1", "A2", "A", "B1", "B", "C1", "C", "D1", "D", "BE", "C1E", "CE", "D1E", "DE");
-            categories = scannerText.nextLine().toUpperCase();
-            if (categoriesList.contains(categories)) {
-                System.out.println("Set!");
-            } else {
-                System.out.println("Not correct input, try again!");
-            }
-
-            System.out.println("Will you add some more categories? yes / no");
-            contin = scannerText.nextLine().toLowerCase();
-            while (contin.contains("yes")){
                 System.out.println("Insert valid driving licence category: ");
+                Set<String> categoriesList = Set.of("AM", "A1", "A2", "A", "B1", "B", "C1", "C", "D1", "D", "BE", "C1E", "CE", "D1E", "DE");
                 categories = scannerText.nextLine().toUpperCase();
+                if (categoriesList.contains(categories)) {
+                    System.out.println("Set!");
+                } else {
+                    System.out.println("Not correct input, try again!");
+                }
+
                 System.out.println("Will you add some more categories? yes / no");
                 contin = scannerText.nextLine().toLowerCase();
-            }
+                while (contin.contains("yes")) {
+                    System.out.println("Insert valid driving licence category: ");
+                    categories = scannerText.nextLine().toUpperCase();
+                    System.out.println("Will you add some more categories? yes / no");
+                    contin = scannerText.nextLine().toLowerCase();
+                }
 
-            System.out.println("Insert your availability: Full time / Weekends / Working days / Other ");
-            Set<String> availabilityList = Set.of("FULL TIME",  "WEEKENDS", "WORKING DAYS", "OTHER");
-            availability = scannerText.nextLine().toUpperCase();
-            if (availabilityList.contains(availability)) {
-                System.out.println("Set!");
+                System.out.println("Insert your availability: Full time / Weekends / Working days / Other ");
+                Set<String> availabilityList = Set.of("FULL TIME", "WEEKENDS", "WORKING DAYS", "OTHER");
+                availability = scannerText.nextLine().toUpperCase();
+                if (availabilityList.contains(availability)) {
+                    System.out.println("Set!");
+                } else {
+                    System.out.println("Not correct input, try again!");
+                }
+
             } else {
-                System.out.println("Not correct input, try again!");
+                System.out.println("Sorry, some mistake. Please try again!");
             }
-
-        } else {
-            System.out.println("Sorry, some mistake. Please try again!");
-        }
 
             int offerTransportSql = DataBase.offerTransport(date, region, techCondition, allWheelDrive, seats, stopDate, categories, availability);
             if (offerTransportSql > 0) {
@@ -195,7 +191,7 @@ public class SortingMethodsList {
         return 0;
     }
 
-    public static int jobOffer(){
+    public static int jobOffer() {
         Scanner scannerText = new Scanner(System.in);
         Scanner scannerInt = new Scanner(System.in);
         String quite = "yes";
@@ -206,13 +202,13 @@ public class SortingMethodsList {
             String region = getRegion(citiesList, scannerText.nextLine(), "Region set!", "Region not correct, try again!");
 
             System.out.println("Insert industry: Production / Client service / Finance / IT / Social care / Health care / Art");
-            Set<String> industryList = Set.of("PRODUCTION",  "CLIENT SERVICE", "FINANCE", "IT", "SOCIAL CARE", "HEALTH CARE", "ART");
+            Set<String> industryList = Set.of("PRODUCTION", "CLIENT SERVICE", "FINANCE", "IT", "SOCIAL CARE", "HEALTH CARE", "ART");
             String industry = getRegion(industryList, scannerText.nextLine(), "Industry set!", "Industry not correct, try again!");
 
             System.out.println("How may workplace you can offer?");
             int workplaceCount = scannerInt.nextInt(); // doesn't read data after int variable
             System.out.println("Level of position: Entry / Junior / Specialist / Senior / Management");
-            Set<String> levelList = Set.of("ENTRY",  "JUNIOR", "SPECIALIST", "SENIOR", "MANAGEMENT");
+            Set<String> levelList = Set.of("ENTRY", "JUNIOR", "SPECIALIST", "SENIOR", "MANAGEMENT");
             String level = getRegion(levelList, scannerText.nextLine(), "Level set!", "Level not correct, try again!");
 
             System.out.println("Insert offered gross salary: ");
@@ -234,7 +230,7 @@ public class SortingMethodsList {
         return 1;
     }
 
-    public static void healthCare(){
+    public static void healthCare() {
         Scanner scannerText = new Scanner(System.in);
         Scanner scannerNum = new Scanner(System.in);
         String contin = "yes";
@@ -251,7 +247,7 @@ public class SortingMethodsList {
             int healthProcCount = scannerNum.nextInt();
 
             String languages = "";
-            while (contin.equals("yes")){
+            while (contin.equals("yes")) {
                 System.out.println("Insert health specialist working languages: ");
                 languages = scannerText.nextLine();
                 System.out.println("Will you add some more languages? yes / no");
@@ -273,7 +269,7 @@ public class SortingMethodsList {
         }
     }
 
-    public static int socialSupport(){
+    public static int socialSupport() {
         Scanner scannerText = new Scanner(System.in);
         Scanner scannerNum = new Scanner(System.in);
         String contin = "yes";
@@ -311,7 +307,7 @@ public class SortingMethodsList {
         return region;
     }
 
-    public static void volunteeringWork(){
+    public static void volunteeringWork() {
         Scanner scanner = new Scanner(System.in);
         String quite = "yes";
         String contin = "yes";
@@ -321,7 +317,7 @@ public class SortingMethodsList {
             Set<String> cities = getCities();
             String region = getRegion(cities, scanner.nextLine(), "Region set!", "Region not correct, try again!");
             String languages = "";
-            while (contin.equals("yes")){
+            while (contin.equals("yes")) {
                 System.out.println("Insert health specialist working languages: ");
                 languages = scanner.nextLine();
                 System.out.println("Will you add some more languages? yes / no");
@@ -349,10 +345,10 @@ public class SortingMethodsList {
 
     private static Set<String> getCities() {
         System.out.println("Insert region where accommodation is located? Riga / Jelgava / Valmiera / Liepaja / Ventspils / Daugavpils / Rezekne");
-        return Set.of("RIGA",  "JELGAVA", "VALMIERA", "LIEPAJA", "VENTSPILS", "DAUGAVPILS", "REZEKNE");
+        return Set.of("RIGA", "JELGAVA", "VALMIERA", "LIEPAJA", "VENTSPILS", "DAUGAVPILS", "REZEKNE");
     }
 
-    public static void arrivalToLatvia(){
+    public static void arrivalToLatvia() {
 
         System.out.println("Arrival in Latvia\n" +
                 "Welcome to Latvia! Information that could help you:\n" +
@@ -369,7 +365,7 @@ public class SortingMethodsList {
         System.out.println("To receive other type of help, continue with other options.");
     }
 
-    public static void longTermStay(){ //tekstu var iznest failā ko glabā klasē / direktorijā / utt
+    public static void longTermStay() { //tekstu var iznest failā ko glabā klasē / direktorijā / utt
         System.out.println(" Ukrainian citizens who have a biometric passport do not need a visa for the first 90 days." +
                 " Residents without a biometric passport will be issued a visa free of charge. " +
                 "You have the right to apply for a long-term visa with the right to employment, or apply for asylum in Latvia. " +
@@ -403,15 +399,15 @@ public class SortingMethodsList {
                 "\n");
     }
 
-    public static void readSocialSupport(){
-       DataBase.readSocialSupportSql(); // add option choose region
+    public static void readSocialSupport() {
+        DataBase.readSocialSupportSql(); // add option choose region
     }
 
-    public static void readHelpCenters(){
-           DataBase.readHelpCentersSql();
+    public static void readHelpCenters() {
+        DataBase.readHelpCentersSql();
     }
 
-    public static void readHealthHelp(){
-           DataBase.readHealthHelpSql();
+    public static void readHealthHelp() {
+        DataBase.readHealthHelpSql();
     }
 }
