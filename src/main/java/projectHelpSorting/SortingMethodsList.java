@@ -153,7 +153,7 @@ public class SortingMethodsList {
         }
     }
 
-    public static int accommodation() {
+    public static void accommodation() {
         Scanner scannerText = new Scanner(System.in);
         Scanner scannerInt = new Scanner(System.in);
         String contin = "yes";
@@ -187,10 +187,9 @@ public class SortingMethodsList {
             System.out.println("Would you like to insert another accommodation information? yes / no");
             contin = scannerText.nextLine().toLowerCase();
         }
-        return 0;
     }
 
-    public static int jobOffer() {
+    public static void jobOffer() {
         Scanner scannerText = new Scanner(System.in);
         Scanner scannerInt = new Scanner(System.in);
         String quite = "yes";
@@ -226,7 +225,6 @@ public class SortingMethodsList {
             System.out.println("Would you like to insert another job offers? yes / no");
             quite = scannerText.nextLine().toLowerCase();
         }
-        return 1;
     }
 
     public static void healthCare() {
@@ -268,7 +266,7 @@ public class SortingMethodsList {
         }
     }
 
-    public static int socialSupport() {
+    public static void socialSupport() {
         Scanner scannerText = new Scanner(System.in);
         Scanner scannerNum = new Scanner(System.in);
         String contin = "yes";
@@ -293,7 +291,6 @@ public class SortingMethodsList {
             System.out.println("Would you like to insert another social support offer? yes / no");
             contin = scannerText.nextLine().toLowerCase();
         }
-        return 0;
     }
 
     public static void volunteeringWork() {
